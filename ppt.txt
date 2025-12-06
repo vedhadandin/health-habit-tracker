@@ -1,0 +1,16 @@
+
+Healthy Habit Tracker — PPT Slide Text
+-------------------------------------
+Title: Healthy Habit Tracker (PWA) — Mobile Computing Project
+
+Slide content:
+- Purpose: Track daily healthy habits, set reminders, receive notifications.
+- Key Features:
+  - Multiple reminders per habit
+  - In-app alarms (WebAudio)
+  - Background notifications (Web Push via Push Server & Service Worker)
+  - PWA installable, offline-capable
+  - UI improvements: categories, dark mode, weekly stats
+- Demo steps (short):
+  - Open site on Android Chrome, allow notifications, add habit with reminder, test alarm, subscribe to push and send server push.
+- Future scope: analytics, account sync, smart scheduling, ML-based habit suggestions.

@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Healthy Habit Tracker — Advanced</title>
+<link rel="manifest" href="manifest.json"/>
+<link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+<div class="app">
+  <header>
+    <div class="hdr-left">
+      <h1>Healthy Habit Tracker</h1>
+      <p class="muted">Habits • Reminders • Notifications</p>
+    </div>
+    <div class="hdr-right">
+      <button id="darkToggle" class="icon-btn" title="Toggle dark mode">🌓</button>
+      <button id="exportBtn" class="btn">Export</button>
+      <button id="importBtn" class="btn">Import</button>
+    </div>
+  </header>
+
+  <main>
+    <aside class="sidebar card">
+      <h3>Controls</h3>
+      <div class="small muted">Notifications</div>
+      <div class="row">
+        <button id="notifyPermBtn" class="btn">Request Permission</button>
+        <button id="subscribeBtn" class="btn">Enable Background</button>
+      </div>
+      <div style="height:8px"></div>
+      <div class="small muted">Add Habit</div>
+      <form id="habitForm">
+        <input id="habitName" placeholder="Habit name (e.g. Drink water)" required/>
+        <select id="habitCategory">
+          <option value="general">General</option>
+          <option value="body">Body</option>
+          <option value="mind">Mind</option>
+          <option value="study">Study</option>
+        </select>
+        <label class="small muted">Reminders (multiple allowed)</label>
+        <div id="remindersWrap">
+          <input class="remTime" type="time"/>
+        </div>
+        <div class="row">
+          <button id="addReminderBtn" type="button" class="btn">+ Reminder</button>
+          <button id="saveHabitBtn" type="submit" class="btn primary">Save</button>
+        </div>
+      </form>
+
+      <div style="height:10px"></div>
+      <div class="small muted">Quick Demo</div>
+      <div class="row">
+        <button id="testAlarmBtn" class="btn">Test Alarm</button>
+        <button id="clearBtn" class="btn">Clear All</button>
+      </div>
+      <div style="height:10px"></div>
+      <div class="small muted">Push Server</div>
+      <div class="small">Use push-server/example to accept subscriptions and send pushes.</div>
+    </aside>
+
+    <section class="content">
+      <div class="card" id="todayCard">
+        <h2>Today</h2>
+        <div id="progressWrap">
+          <canvas id="progressRing" width="80" height="80"></canvas>
+          <div id="progressText">0%</div>
+        </div>
+        <div id="habitsList" class="list"></div>
+        <p id="noHabits" class="muted">No habits yet. Add one to begin.</p>
+      </div>
+
+      <div class="card">
+        <h2>Statistics (7 days)</h2>
+        <canvas id="weekChart" width="600" height="140"></canvas>
+      </div>
+
+      <div class="card">
+        <h2>Debug / Logs</h2>
+        <div id="debugLog" class="small muted" style="max-height:160px; overflow:auto;"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <small class="muted">Offline-capable PWA. Background push requires a server (push-server included as example).</small>
+  </footer>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
