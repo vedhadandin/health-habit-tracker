@@ -1,0 +1,1 @@
+Host on GitHub Pages (HTTPS). Open on mobile Chrome. Use Install button or browser menu -> Add to Home screen.
