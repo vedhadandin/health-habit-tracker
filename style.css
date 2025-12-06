@@ -1,0 +1,43 @@
+
+:root{
+  --bg:#f7fcfb;
+  --card:#ffffff;
+  --muted:#6b7280;
+  --accent:#0ea5a4;
+  --accent2:#7c3aed;
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:Inter,system-ui,-apple-system,'Segoe UI',Roboto;background:var(--bg);color:#062;min-height:100vh}
+.app{max-width:720px;margin:0 auto;display:flex;flex-direction:column;min-height:100vh}
+.topbar{display:flex;justify-content:space-between;align-items:center;padding:12px;background:linear-gradient(90deg,var(--accent),#10b981);color:white}
+.brand{display:flex;gap:10px;align-items:center}
+.logo{width:44px;height:44px;border-radius:8px;border:2px solid rgba(255,255,255,0.15)}
+.topbar h1{margin:0;font-size:1.1rem}
+.topbar p{margin:0;font-size:0.8rem;opacity:0.95}
+.actions{display:flex;gap:8px}
+.icon-btn{background:transparent;border:none;color:white;font-size:18px}
+main{padding:12px;display:grid;grid-template-columns:1fr;gap:12px}
+.card{background:var(--card);padding:12px;border-radius:12px;box-shadow:0 10px 30px rgba(2,6,23,0.06)}
+.control-card .chips{display:flex;gap:8px;margin-top:8px}
+.chip{padding:6px 10px;border-radius:999px;border:1px solid #eef6f2;background:transparent;cursor:pointer}
+.chip.active{background:linear-gradient(90deg,var(--accent2),var(--accent));color:white;border:none}
+.habit-form input, .habit-form select{padding:10px;border-radius:8px;border:1px solid #eef6f2}
+.row{display:flex;gap:8px;margin-top:8px}
+.btn{padding:8px 10px;border-radius:10px;border:none;background:#f3faff;color:#062;cursor:pointer}
+.btn.primary{background:var(--accent);color:white;box-shadow:0 8px 18px rgba(14,165,164,0.18)}
+.today-header{display:flex;justify-content:space-between;align-items:center}
+.progress-wrap{display:flex;flex-direction:column;align-items:center;gap:6px}
+#progressText{font-weight:800}
+.list{margin-top:8px;display:flex;flex-direction:column;gap:8px}
+.habit{display:flex;justify-content:space-between;align-items:center;padding:10px;border-radius:10px;border:1px solid #eef6f2;transition:transform .15s}
+.habit:hover{transform:translateY(-4px)}
+.habit .meta{font-size:0.85rem;color:var(--muted)}
+.debug{max-height:140px;overflow:auto;font-size:0.85rem;color:var(--muted)}
+.foot{padding:12px;text-align:center;color:var(--muted)}
+
+/* Responsive */
+@media (min-width:880px){
+  main{grid-template-columns: 1fr 360px}
+  .stats-card{order:2}
+  .debug-card{order:3}
+}

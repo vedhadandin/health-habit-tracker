@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"/>
+<title>Healthy Habit Tracker</title>
+<link rel="manifest" href="manifest.json"/>
+<meta name="theme-color" content="#0ea5a4"/>
+<link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+<div class="app">
+  <header class="topbar">
+    <div class="brand">
+      <img src="icon-192.png" class="logo" alt="logo"/>
+      <div>
+        <h1>Healthy Habit</h1>
+        <p class="muted">Track • Remind • Improve</p>
+      </div>
+    </div>
+    <div class="actions">
+      <button id="darkToggle" class="icon-btn" title="Toggle theme">🌓</button>
+      <button id="installBtn" class="btn primary" style="display:none">Install</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="card control-card">
+      <div class="control-row">
+        <div>
+          <input id="search" placeholder="Search habits..." />
+        </div>
+        <div class="small muted">Categories</div>
+        <div class="chips" id="categoryChips">
+          <button class="chip active" data-cat="all">All</button>
+          <button class="chip" data-cat="body">Body</button>
+          <button class="chip" data-cat="mind">Mind</button>
+          <button class="chip" data-cat="study">Study</button>
+        </div>
+      </div>
+
+      <form id="habitForm" class="habit-form">
+        <input id="habitName" placeholder="e.g. Drink water" required />
+        <div class="row">
+          <select id="habitCategory">
+            <option value="body">Body</option>
+            <option value="mind">Mind</option>
+            <option value="study">Study</option>
+            <option value="other">Other</option>
+          </select>
+          <input id="habitTime" type="time" />
+          <button id="addBtn" class="btn primary" type="submit">Add</button>
+        </div>
+      </form>
+
+      <div class="row small">
+        <button id="notifyPermBtn" class="btn">Enable Notifs</button>
+        <button id="exportBtn" class="btn">Export</button>
+        <button id="importBtn" class="btn">Import</button>
+      </div>
+    </section>
+
+    <section class="card today-card">
+      <div class="today-header">
+        <div>
+          <h2>Today</h2>
+          <p class="muted small" id="dateLabel"></p>
+        </div>
+        <div class="progress-wrap">
+          <canvas id="ring" width="72" height="72"></canvas>
+          <div id="progressText">0%</div>
+        </div>
+      </div>
+
+      <div id="habitsList" class="list"></div>
+      <p id="noHabits" class="muted">No habits yet. Add one.</p>
+    </section>
+
+    <section class="card stats-card">
+      <h3>Weekly Progress</h3>
+      <canvas id="weekChart" width="500" height="120"></canvas>
+    </section>
+
+    <section class="card debug-card">
+      <h3>Activity Log</h3>
+      <div id="debugLog" class="debug"></div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <small class="muted">Install on your phone for native-like experience. Background push requires server.</small>
+  </footer>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
